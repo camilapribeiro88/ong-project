@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sign up — NGO Example</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<header>
+  <h1>NGO Example</h1>
+  <nav aria-label="Main">
+    <a href="index.html">Home</a>
+    <a href="projetos.html">Projects</a>
+    <a href="cadastro.html" aria-current="page">Sign up</a>
+  </nav>
+</header>
+
+<main>
+  <h2>Volunteer sign up</h2>
+  <p>Fields marked with * are required.</p>
+
+  <form id="signup-form" novalidate>
+    <fieldset>
+      <legend>Personal info</legend>
+
+      <label for="name">Full name *</label>
+      <input id="name" name="name" type="text" placeholder="Your name" autocomplete="name" required />
+
+      <label for="email">Email *</label>
+      <input id="email" name="email" type="email" placeholder="you@email.com" autocomplete="email" required />
+
+      <label for="cpf">CPF *</label>
+      <input id="cpf" name="cpf" type="text" inputmode="numeric" placeholder="000.000.000-00"
+             pattern="\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}" title="Format: 000.000.000-00" required />
+
+      <label for="phone">Phone *</label>
+      <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="(11) 99999-9999"
+             pattern="\\(\\d{2}\\)\\s?\\d{4,5}-\\d{4}" title="DDD + number, e.g. (11) 91234-5678" required />
+
+      <label for="birth">Birthdate *</label>
+      <input id="birth" name="birth" type="date" required />
+    </fieldset>
+
+    <fieldset>
+      <legend>Address</legend>
+
+      <label for="addr">Address *</label>
+      <input id="addr" name="addr" type="text" placeholder="Street, number" autocomplete="address-line1" required />
+
+      <label for="cep">CEP *</label>
+      <input id="cep" name="cep" type="text" inputmode="numeric" placeholder="00000-000"
+             pattern="\\d{5}-\\d{3}" title="Format: 00000-000" required />
+
+      <label for="city">City *</label>
+      <input id="city" name="city" type="text" autocomplete="address-level2" required />
+
+      <label for="uf">State (UF) *</label>
+      <input id="uf" name="uf" type="text" placeholder="UF" pattern="[A-Za-z]{2}" title="Two-letter state code" required />
+    </fieldset>
+
+    <fieldset id="volunteer">
+      <legend>Volunteering</legend>
+
+      <label>Area of interest *</label>
+      <select name="area" required>
+        <option value="">Select</option>
+        <option>Education</option>
+        <option>Health</option>
+        <option>Communication</option>
+        <option>Admin</option>
+      </select>
+
+      <fieldset>
+        <legend>Availability *</legend>
+        <label><input type="checkbox" name="avail" value="morning" required /> Morning</label>
+        <label><input type="checkbox" name="avail" value="afternoon" /> Afternoon</label>
+        <label><input type="checkbox" name="avail" value="evening" /> Evening</label>
+      </fieldset>
+    </fieldset>
+
+    <div style="margin-top:12px;">
+      <button type="submit">Send</button>
+      <button type="reset">Clear</button>
+    </div>
+  </form>
+</main>
+
+<footer>
+  <small>© <span id="year"></span> NGO Example</small>
+</footer>
+<script src="js/masks.js" defer></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

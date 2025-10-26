@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>NGO Example</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <h1>NGO Example</h1>
+    <nav aria-label="Main">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="projetos.html">Projects</a>
+      <a href="cadastro.html">Sign up</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Welcome</h2>
+    <p>This is a minimal starting page. We’ll improve it step by step.</p>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> NGO Example</small>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
